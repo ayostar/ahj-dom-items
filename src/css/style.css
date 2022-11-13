@@ -1,0 +1,42 @@
+:root {
+  --cell-size: 130px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: antiquewhite;
+}
+
+.container-game {
+  height: 100%;
+}
+
+.container-gameboard {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gameboard {
+  display: grid;
+  gap: 2px;
+  border: 1px solid #000;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(76, 228, 30, 0.835);
+  border: 1px solid #000;
+  width: var(--cell-size);
+  height: var(--cell-size);
+}
+
+img {
+  display: block;
+}

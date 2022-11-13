@@ -1,0 +1,23 @@
+function bindToDOM(container) {
+  if (!(container instanceof HTMLElement)) {
+    throw new Error('Ошибка с DOM, не "HTMLElement"');
+  }
+}
+
+function checkBinding() {
+  if (this.container === null) {
+    throw new Error('Ошибка с DOM');
+  }
+}
+
+function getRandomInt(min, max) {
+  const min0 = Math.ceil(min);
+  const max0 = Math.floor(max);
+  return Math.floor(Math.random() * (max0 - min0) + min0);
+}
+
+module.exports = {
+  getRandomInt,
+  bindToDOM,
+  checkBinding,
+};
