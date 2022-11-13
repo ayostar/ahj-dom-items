@@ -50,15 +50,12 @@ export default class GamePlay {
       } else {
         randomIndex = randomNumber;
       }
-
       this.cells[randomIndex].classList.add('goblin');
     }, 1000);
   }
 
   deactivateGoblin() {
-    const goblinActiveCell = [...this.cells].find((n) =>
-      n.classList.contains('goblin'),
-    );
+    const goblinActiveCell = [...this.cells].find((n) => n.classList.contains('goblin'));
     if (goblinActiveCell) {
       goblinActiveCell.classList.remove('goblin');
     }
