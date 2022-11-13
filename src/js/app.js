@@ -1,7 +1,7 @@
 import GamePlay from './gameplay';
 
 const gameContainer = document.querySelector('.container-game');
-const boardsize = 4;
+const boardsize = 5;
 
 const gamePlay = new GamePlay(boardsize, gameContainer);
 

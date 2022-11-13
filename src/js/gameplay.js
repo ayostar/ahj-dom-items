@@ -1,5 +1,4 @@
-import goblin from '../img/goblin.png';
-import { getRandomInt, bindToDOM, checkBinding } from './utils';
+import { getRandomInt, bindToDOM } from './utils';
 
 export default class GamePlay {
   constructor(boardSize, container) {
@@ -11,7 +10,6 @@ export default class GamePlay {
 
   drawUi() {
     bindToDOM(this.container);
-    checkBinding();
 
     const gameBoardContainer = document.createElement('div');
     gameBoardContainer.classList.add('container-gameboard');
@@ -37,12 +35,12 @@ export default class GamePlay {
   }
 
   startPainting() {
-    const image = document.createElement('img');
-    image.src = goblin;
     let randomIndex;
 
     setInterval(() => {
       const randomNumber = getRandomInt(0, this.cells.length - 1);
+      this.deactivateGoblin();
+
       if (randomNumber === randomIndex) {
         if (randomNumber === this.cells.length - 1) {
           randomIndex -= 1;
@@ -52,7 +50,17 @@ export default class GamePlay {
       } else {
         randomIndex = randomNumber;
       }
-      this.cells[randomIndex].append(image);
+
+      this.cells[randomIndex].classList.add('goblin');
     }, 1000);
+  }
+
+  deactivateGoblin() {
+    const goblinActiveCell = [...this.cells].find((n) =>
+      n.classList.contains('goblin'),
+    );
+    if (goblinActiveCell) {
+      goblinActiveCell.classList.remove('goblin');
+    }
   }
 }

@@ -37,6 +37,10 @@ body {
   height: var(--cell-size);
 }
 
+.goblin {
+  background-image: url("../img/goblin.png");
+}
+
 img {
   display: block;
 }

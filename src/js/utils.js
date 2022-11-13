@@ -4,12 +4,6 @@ function bindToDOM(container) {
   }
 }
 
-function checkBinding() {
-  if (this.container === null) {
-    throw new Error('Ошибка с DOM');
-  }
-}
-
 function getRandomInt(min, max) {
   const min0 = Math.ceil(min);
   const max0 = Math.floor(max);
@@ -19,5 +13,4 @@ function getRandomInt(min, max) {
 module.exports = {
   getRandomInt,
   bindToDOM,
-  checkBinding,
 };
